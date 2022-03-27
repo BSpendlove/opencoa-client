@@ -168,7 +168,7 @@ def change_acl_v4(coa_session: CiscoCOAACLChange):
 
 @router.patch("/acl_v6")
 def change_acl_v6(coa_session: CiscoCOAACLChange):
-    """Changes the v4 ACL"""
+    """Changes the v6 ACL"""
     coa_generic = COAGeneric(
         **{
             "ip_address": coa_session.ip_address,
