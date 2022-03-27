@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "924445fe-099e-4c32-bcd5-53ab16a14faf",
+		"name": "opencoa_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "vendors",
+			"item": [
+				{
+					"name": "cisco",
+					"item": [
+						{
+							"name": "Change HQoS policies",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\",\r\n    \"policy_in\": \"some_policy_a\",\r\n    \"policy_out\": \"some_policy_b\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/hqos_policy",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"hqos_policy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change v4 ACL",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\",\r\n    \"acl_in\": \"some_acl_in\",\r\n    \"acl_out\": \"some_acl_out\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/acl_v4",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"acl_v4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change v6 ACL",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\",\r\n    \"acl_in\": \"some_acl_in\",\r\n    \"acl_out\": \"some_acl_out\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/acl_v6",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"acl_v6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Account Logon",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/account_logon",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"account_logon"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Account Logoff",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/account_logoff",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"account_logoff"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Account Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/account_update",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"account_update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Service Activate",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\",\r\n    \"service_name\": \"some_service\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/service_activate",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"service_activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Service Deactivate",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"username\": \"RID:_10293092-09230293-49309403\",\r\n    \"service_name\": \"some_service\"\r\n}"
+								},
+								"url": {
+									"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa/cisco/service_deactivate",
+									"protocol": "{{SCHEMA}}",
+									"host": [
+										"{{HOST}}"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"coa",
+										"cisco",
+										"service_deactivate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Send COA Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ip_address\": \"127.0.0.1\",\r\n    \"port\": 1700,\r\n    \"secret\": \"mysecret\",\r\n    \"timeout\": 5,\r\n    \"attributes\": {\r\n        \"User-Name\": \"Ciscodisco\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{SCHEMA}}://{{HOST}}:{{PORT}}/coa",
+					"protocol": "{{SCHEMA}}",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"coa"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
