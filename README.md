@@ -1,5 +1,5 @@
 # opencoa-client
-COA Client API to interact with a COA Server (eg. an ASR9k or Juniper BNG)
+CoA Client API to interact with a CoA Server (eg. an ASR9k or Juniper BNG)
 
 NOTE: This project is not intended to run in a production environment (lacks basic security/authentication functionality) and should be used at your own discretion.
 
@@ -16,9 +16,9 @@ $INCLUDE dictionary.freeradius
 
 A lot of pre-built templates can be found on Freeradius github, you can download them and just drop them into the folder.
 
-2) A very generic CoA packet can be built using the /coa endpoint. The majority of vendor specific endpoints are built using this endpoint and just send more specific attributes related to the task (eg. deactiving or updating a service, or changing a policy map). Visit http://<your-ip>:<your-port>/docs to see Swagger documentation which FastAPI generates automatically based on the available routes and data models.
+2) A very generic CoA packet can be built using the /coa endpoint. The majority of vendor specific endpoints are built using this endpoint and just send more specific attributes related to the task (eg. deactiving or updating a service, or changing a policy map). Visit `http://<your-ip>:<your-port>/docs` to see Swagger documentation which FastAPI generates automatically based on the available routes and data models.
 
-3) Add your FastAPI APIRouter in the routes/vendors/<vendor> and register the APIRouter in main.py with `app.include_router(<your-api-router>)`
+3) Add your FastAPI APIRouter in the `routes/vendors/<vendor>` and register the APIRouter in main.py with `app.include_router(<your-api-router>)`
 
 The `/coa` endpoint will perform some basic checks to ensure the Attributes you send in the body are actually available, this attribute dictionary is pulled every time the endpoint is called so there is no need to restart the API if you add a new dictionary. Common RADIUS return codes will be available upon success/errors if pyrad fails to build the CoA packet or receive a valid response (eg. a CoAACK). The status codes are defined within the `config.py` or snippet from the file can be found below:
 
@@ -56,9 +56,22 @@ POSTMAN API examples can be found in the postman_collection.json file located in
 }
 ```
 
+Sending multiple attributes with the same key can easily be done with creating a list as the value like so:
+```
+{
+    "ip_address": "127.0.0.1",
+    "port": 1700,
+    "secret": "mysecret",
+    "timeout": 5,
+    "attributes": {
+        "AVPair": ["some-cisco-attribute='yes'", "some-other-avpair-value='probably']
+    }
+}
+```
+
 Vendor specific routes can be found within the Swagger API (or in the opencoa_api/routes/vendors/<vendor>)
 
-coa_server.py can be used to test attributes locally (127.0.0.1) or on a remote server, this script will simply print the attribute key/value pairs to the console and return CoAACK. If you want to generate a CoANAK then you can include the attribute "Framed-IP-Netmask" in the attributes when sending a request to the `/coa` endpoint and this will on purpose, return the CoANAK code.
+`coa_server.py` can be used to test attributes locally (127.0.0.1) or on a remote server, this script will simply print the attribute key/value pairs to the console and return CoAACK. If you want to generate a CoANAK scenario, you can include the attribute "Framed-IP-Netmask" in the attributes when sending a request to the `/coa` endpoint and this will on purpose, return the CoANAK code. This is purely for testing purpose and is simply the example from the pyrad github repository so please don't try to use this as a base template to build a CoA server
 
 Existing attribute dictionaries are by FreeRADIUS @ https://github.com/FreeRADIUS/freeradius-server/tree/master/share/dictionary
 
