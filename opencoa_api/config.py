@@ -62,7 +62,7 @@ class Config:
         Returns dict of attributes normalized"""
         return {k.replace("-", "_"): attributes[k] for k in attributes}
 
-    def get_return_code_description(self, code: int) -> dict:
+    def get_return_code_description(self, code: int) -> str:
         """Finds a description based on common return codes
 
         Arguments:
