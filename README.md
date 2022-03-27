@@ -59,3 +59,16 @@ POSTMAN API examples can be found in the postman_collection.json file located in
 Vendor specific routes can be found within the Swagger API (or in the opencoa_api/routes/vendors/<vendor>)
 
 coa_server.py can be used to test attributes locally (127.0.0.1) or on a remote server, this script will simply print the attribute key/value pairs to the console and return CoAACK. If you want to generate a CoANAK then you can include the attribute "Framed-IP-Netmask" in the attributes when sending a request to the `/coa` endpoint and this will on purpose, return the CoANAK code.
+
+Existing attribute dictionaries are by FreeRADIUS @ https://github.com/FreeRADIUS/freeradius-server/tree/master/share/dictionary
+
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
