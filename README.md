@@ -1,6 +1,34 @@
 # opencoa-client
 CoA Client API to interact with a CoA Server (eg. an ASR9k or Juniper BNG)
 
+Getting started with docker-compose
+```
+version: "3.9"
+   
+services:
+  opencoa_api:
+    build: .
+    ports:
+      - 8080:8000
+    environment:
+      - HOST=0.0.0.0
+```
+
+Example POST request
+```
+curl --location --request POST 'http://10.4.20.100:8080/coa' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "ip_address": "10.4.20.98",
+    "port": 1700,
+    "secret": "mysecret",
+    "timeout": 5,
+    "attributes": {
+        "User-Name": "Ciscodisco"
+    }
+}'
+```
+
 NOTE: This project is not intended to run in a production environment (lacks basic security/authentication functionality) and should be used at your own discretion.
 
 The idea behind this small API is to avoid having to run subprocesses in Python using something like radclient to send CoA messages to a BNG to perform actions such as deactivating a subscriber, changing policy maps, etc... You can extend it to support other vendors however there a few tasks you need to perform:

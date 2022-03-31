@@ -10,6 +10,3 @@ app = FastAPI()
 # Include vendor specific API endpoints
 app.include_router(coa.router)
 app.include_router(cisco.router)
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=config.API_PORT)

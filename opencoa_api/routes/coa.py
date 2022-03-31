@@ -9,7 +9,7 @@ router = APIRouter(
     responses={404: {"Error": True, "description": "Not Found"}},
 )
 
-config = Config(RADIUS_DICTIONARY_PATH="./attributes")
+config = Config(RADIUS_DICTIONARY_PATH="opencoa_api/attributes")
 
 
 @router.post("/")
